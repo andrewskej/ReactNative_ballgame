@@ -1,29 +1,31 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import {StyleSheet, Text, View} from 'react-native';
+import {StoreProvider} from './Contexts/Store'
+import DropZone from './Components/DropZone'
+import Timer from './Components/Timer'
+import Pointer from './Components/Pointer';
 
 export default class App extends Component {
+
+  //timer 10초부터 다운, 리셋
+  //pointer  10초가 지나면 -1, 공 색깔이 맞게 들어가면 +1
+  //Target  10초가 지나면 리셋, 공이 들어가면 리셋
+  //Ball
+  //BallList
+
+
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <StoreProvider>
+        <View style={styles.container}>
+          <DropZone/>
+          <Timer/>
+          <Pointer/>
+        </View>
+      </StoreProvider>
     );
   }
 }
@@ -31,18 +33,9 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
 });

@@ -6,7 +6,7 @@ import {StoreProvider} from './Contexts/Store'
 import DropZone from './Components/DropZone'
 import Timer from './Components/Timer'
 import Pointer from './Components/Pointer';
-
+import Ball from './Components/Ball';
 export default class App extends Component {
 
   //timer 10초부터 다운, 리셋
@@ -24,6 +24,7 @@ export default class App extends Component {
           <DropZone/>
           <Timer/>
           <Pointer/>
+          <Ball/>
         </View>
       </StoreProvider>
     );

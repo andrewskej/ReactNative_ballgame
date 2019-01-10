@@ -9,11 +9,18 @@ import Pointer from './Components/Pointer';
 import Ball from './Components/Ball';
 export default class App extends Component {
 
-  //timer 10초부터 다운, 리셋
-  //pointer  10초가 지나면 -1, 공 색깔이 맞게 들어가면 +1
-  //Target  10초가 지나면 리셋, 공이 들어가면 리셋
-  //Ball
-  //BallList
+  //   Rule
+  //over if score < 0
+  //wins if score === certain point I set
+  //Ball has moving & bouncing speed, and it gets faster for every score you make
+
+  //   Components
+  //timer : countDown from 10 sec, resets once 0
+  //pointer : -1 every 10sec, if the right ball dragged, +1 instead
+  //Target : resets every 10 sec or right ball dragged in
+
+  //Ball : spawns every 10 sec, regardless of action
+  //BallList : contains ball
 
 
 
